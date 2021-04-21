@@ -1,10 +1,16 @@
+import { SideNav } from "./SideNav";
 import "./styles.css";
+import VideoList from "./VideoList";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <div className="navbar">
+        <SideNav />
+      </div>
+      <div className="video">
+        <VideoList />
+      </div>
     </div>
   );
 }

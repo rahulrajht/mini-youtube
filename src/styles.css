@@ -1,4 +1,12 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  display: grid;
+  grid-template-areas: "navbar video ";
+}
+.navbar {
+  grid-area: navbar;
+}
+.video {
+  grid-area: video;
 }

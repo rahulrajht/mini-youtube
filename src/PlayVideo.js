@@ -5,13 +5,15 @@ import SideNav from "./SideNav";
 export default function PlayVideo() {
   const opts = {
     height: "500px",
-    width: "90%",
+    width: "100%",
     playerVars: { autoplay: 1 }
   };
   const { videoId } = useParams();
   return (
     <div className="video-player-container">
-      <SideNav />
+      <div className="sidenav">
+        <SideNav />
+      </div>
       <div className="video-player">
         <YouTube videoId={videoId} opts={opts} onReady={this._onReady} />;
       </div>

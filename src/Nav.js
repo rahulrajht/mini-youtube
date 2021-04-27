@@ -9,7 +9,6 @@ export default function Nav() {
     <>
       <nav className="nav-container">
         <ul>
-          <li>All</li>
           <li onClick={() => setPlaylistId(requests.fetchJava)}>Java</li>
           <li onClick={() => setPlaylistId(requests.fetchjavaScript)}>
             {" "}

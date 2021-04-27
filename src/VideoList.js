@@ -4,7 +4,6 @@ import { Video } from "./Video";
 import { useUrl } from "./context/useVideoPlaylistId";
 import { useVideo } from "./context/videoProvider";
 import "./css/row.css";
-import { Link } from "react-router-dom";
 function VideoList() {
   const { playlistId } = useUrl();
   const { dispatchData } = useVideo();
@@ -34,14 +33,6 @@ function VideoList() {
   }, [playlistId, dispatchData]);
 
   const { videoPlaylist } = useVideo();
-  const opts = {
-    marginTop: "120",
-    height: "490",
-    width: "100%",
-    playerVars: {
-      autoplay: 1
-    }
-  };
 
   return (
     <div className="row">

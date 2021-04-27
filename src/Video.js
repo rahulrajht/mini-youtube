@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./css/Video.css";
-import PlayVideo from "./PlayVideo";
 export function Video(props) {
   const { data } = props;
   const { id, snippet } = data;

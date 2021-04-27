@@ -1,43 +1,56 @@
-import React, { useEffect, useState } from "react";
-import { Video } from "./Video";
-import "./css/Video.css";
 import axios from "axios";
-export default function VideoList() {
-  const [videoList, setVideoList] = useState([]);
-
+import React, { useEffect } from "react";
+import { Video } from "./Video";
+import { useUrl } from "./context/useVideoPlaylistId";
+import { useVideo } from "./context/videoProvider";
+import "./css/row.css";
+import { Link } from "react-router-dom";
+function VideoList() {
+  const { playlistId } = useUrl();
+  const { dispatchData } = useVideo();
   useEffect(() => {
     const options = {
       method: "GET",
-      url: "https://youtube-v31.p.rapidapi.com/playlistItems",
-      params: {
-        playlistId: "PLd3UqWTnYXOnjGmyjD3zbIkyLXP15-6w0",
-        part: "snippet",
-        maxResults: "50"
-      },
+      url: playlistId,
+
       headers: {
         "x-rapidapi-key": "26dc9128d0mshe57c300c2573c60p10e0b2jsne8edfc946cd5",
         "x-rapidapi-host": "youtube-v31.p.rapidapi.com"
       }
     };
-
     axios
       .request(options)
       .then(function (response) {
         console.log(response.data.items);
-        setVideoList(response.data.items);
+        const fetchedVideoPlaylist = response.data.items;
+        dispatchData({
+          type: "setNewData",
+          fetchedVideoPlaylist
+        });
       })
       .catch(function (error) {
         console.error(error);
       });
-  }, []);
+  }, [playlistId, dispatchData]);
+
+  const { videoPlaylist } = useVideo();
+  const opts = {
+    marginTop: "120",
+    height: "490",
+    width: "100%",
+    playerVars: {
+      autoplay: 1
+    }
+  };
 
   return (
-    <>
+    <div className="row">
       <div className="video-container">
-        {videoList.map((item) => (
+        {videoPlaylist.map((item) => (
           <Video data={item} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
+export default VideoList;

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./css/Nav.css";
-export function SideNav() {
+export default function SideNav() {
   return (
     <>
       <nav className="sidebar">

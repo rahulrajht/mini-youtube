@@ -1,0 +1,21 @@
+.nav-container {
+  margin: 0.5rem;
+  height: 65px;
+  background: rgb(39, 38, 38);
+  border-radius: 15px;
+}
+.nav-container > ul {
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-container > ul > li {
+  width: fit-content;
+  border-radius: 15px;
+  list-style: none;
+  background: rgba(15, 120, 240, 0.979);
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  cursor: pointer;
+}

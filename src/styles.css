@@ -1,12 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
+  background-color: rgb(23, 23, 24);
+  width: 100%;
   font-family: sans-serif;
   text-align: center;
-  display: grid;
-  grid-template-areas: "navbar video ";
-}
-.navbar {
-  grid-area: navbar;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .video {
-  grid-area: video;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
 }

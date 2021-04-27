@@ -1,6 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./css/Nav.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faThumbsUp,
+  faList,
+  faUser,
+  faSearch
+} from "@fortawesome/free-solid-svg-icons";
 export default function SideNav() {
   return (
     <>
@@ -8,36 +16,36 @@ export default function SideNav() {
         <ul className="list sidebar-list">
           <NavLink to="/home" className="nav-btn sidebar-btn">
             <li className="list-item-inline sidebar-list-item">
-              <img src="" alt=""></img>
               <span className="btn-description">Home</span>
+              <FontAwesomeIcon icon={faHome} />
             </li>
           </NavLink>
 
           <NavLink to="/" className="nav-btn sidebar-btn">
             <li className="list-item-inline sidebar-list-item">
-              <img src="" alt=""></img>
               <span className="btn-description">Search</span>
+              <FontAwesomeIcon icon={faSearch} />
             </li>
           </NavLink>
 
           <NavLink to="/liked-videos" className="nav-btn sidebar-btn">
             <li className="list-item-inline sidebar-list-item">
-              <img src="" alt=""></img>
-              <span className="btn-description">Liked Videos</span>
+              <span className="btn-description">Liked </span>
+              <FontAwesomeIcon icon={faThumbsUp} />
             </li>
           </NavLink>
 
           <NavLink to="/playlist" className="nav-btn sidebar-btn">
             <li className="list-item-inline sidebar-list-item">
-              <img src="" alt=""></img>
               <span className="btn-description">Playlist</span>
+              <FontAwesomeIcon icon={faList} />
             </li>
           </NavLink>
 
           <NavLink to="/account" className="nav-btn sidebar-btn">
             <li className="list-item-inline sidebar-list-item">
-              <img src="" alt=""></img>
               <span className="btn-description">Account</span>
+              <FontAwesomeIcon icon={faUser} />
             </li>
           </NavLink>
         </ul>

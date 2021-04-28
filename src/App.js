@@ -1,10 +1,8 @@
-import { SideNav } from "./SideNav";
 import "./styles.css";
-import VideoList from "./VideoList";
-import Nav from "./Nav";
 import { Route, Switch } from "react-router-dom";
 import PlayVideo from "./PlayVideo";
 import Home from "./Home";
+import Account from "./Account";
 
 export default function App() {
   return (
@@ -15,6 +13,9 @@ export default function App() {
         </Route>
         <Route exact path="/video/:videoId">
           <PlayVideo />
+        </Route>
+        <Route exact path="/account">
+          <Account />
         </Route>
       </Switch>
     </div>

@@ -1,16 +1,18 @@
 .nav-container {
-  margin: 0.5rem;
+  width: 90%;
+  margin: 0.5rem auto;
   height: 65px;
   background: rgb(39, 38, 38);
   border-radius: 15px;
+  display: flex;
 }
-.nav-container > ul {
-  width: 50%;
+.nav-container > .left {
+  width: 70%;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
 }
-.nav-container > ul > li {
+.nav-container > .left > li {
   width: fit-content;
   border-radius: 15px;
   list-style: none;
@@ -18,4 +20,66 @@
   padding: 0.5rem 1rem;
   color: #ffffff;
   cursor: pointer;
+}
+.nav-container > .right {
+  position: relative;
+  width: 30%;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.nav-container > .right > li {
+  width: fit-content;
+  border-radius: 50%;
+  list-style: none;
+  background: rgba(15, 120, 240, 0.979);
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+}
+.nav-container > .right > li > label {
+  cursor: pointer;
+}
+.account-info {
+  display: none;
+  position: absolute;
+  background: rgb(41, 40, 40);
+  padding: 10px 20px;
+  z-index: 1;
+  padding: 1rem 2rem;
+  width: max-content;
+  top: 4.15rem;
+  right: 2rem;
+}
+.account-info .user-name {
+  width: max-content;
+  border-radius: 15px;
+  padding: 0.5rem 1.5rem;
+  color: rgb(247, 240, 240);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.account-info .user-email {
+  width: max-content;
+  border-radius: 15px;
+  padding: 0.5rem 1.5rem;
+  color: rgb(241, 235, 235);
+}
+.account-info button {
+  padding: 0.5rem 1.5rem;
+  width: max-content;
+  cursor: pointer;
+}
+.user-info .btn-description {
+  font-size: 1.04rem;
+  margin: 1rem;
+  text-align: left;
+  color: var(--text-color);
+}
+
+#toogle {
+  display: none;
+}
+#toogle:checked ~ .account-info {
+  display: block;
 }

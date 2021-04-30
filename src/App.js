@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import PlayVideo from "./PlayVideo";
 import Home from "./Home";
 import Account from "./Account";
+import Login from "./Login";
 
 export default function App() {
   return (
@@ -16,6 +17,9 @@ export default function App() {
         </Route>
         <Route exact path="/account">
           <Account />
+        </Route>
+        <Route exact path="/login">
+          <Login />
         </Route>
       </Switch>
     </div>

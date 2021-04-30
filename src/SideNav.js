@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./css/Nav.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -42,12 +42,15 @@ export default function SideNav() {
             </li>
           </NavLink>
 
-          <NavLink to="/account" className="nav-btn sidebar-btn">
+          <Link
+            to={{ pathname: "/account", state: { from: "/" } }}
+            className="nav-btn sidebar-btn"
+          >
             <li className="list-item-inline sidebar-list-item">
               <span className="btn-description">Account</span>
               <FontAwesomeIcon icon={faUser} />
             </li>
-          </NavLink>
+          </Link>
         </ul>
       </nav>
     </>

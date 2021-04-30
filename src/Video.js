@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./css/Video.css";
 export function Video(props) {
   const { data } = props;
-  const { id, snippet } = data;
+  const { snippet } = data;
   const { publishedAt, title, resourceId, channelTitle, thumbnails } = snippet;
   const { medium } = thumbnails;
   const { url } = medium;

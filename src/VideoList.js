@@ -20,11 +20,9 @@ function VideoList() {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data.items);
-        const fetchedVideoPlaylist = response.data.items;
         dispatchData({
           type: "setNewData",
-          fetchedVideoPlaylist
+          fetchedVideoPlaylist: response.data.items
         });
       })
       .catch(function (error) {
@@ -38,7 +36,9 @@ function VideoList() {
     <div className="row">
       <div className="video-container">
         {videoPlaylist.map((item) => (
-          <Video data={item} />
+          <div key={item._id}>
+            <Video data={item} />
+          </div>
         ))}
       </div>
     </div>

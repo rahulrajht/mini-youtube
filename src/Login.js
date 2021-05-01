@@ -17,6 +17,7 @@ export default function Login() {
       setLoading(true);
       setError("");
       const result = await Login(emailRef.current.value, passRef.current.value);
+
       localStorage.setItem("token", JSON.stringify(result.data.token));
       localStorage.setItem("email", JSON.stringify(result.data.email));
       localStorage.setItem("name", JSON.stringify(result.data.name));

@@ -4,18 +4,29 @@
   box-sizing: border-box;
 }
 .App {
-  background-color: rgb(23, 23, 24);
-  width: 100%;
+  background-color: rgb(252, 252, 252);
+  width: 100vw;
   height: 100vh;
   font-family: sans-serif;
   text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-areas:
+    "navbar navbar navbar"
+    "sidenav videolist videolist"
+    "sidenav videolist videolist";
 }
-.video {
+.navbar {
+  width: 100%;
+  grid-area: navbar;
+}
+.sidenav {
+  grid-area: sidenav;
+  width: 20%;
+}
+.videolist {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 80%;
+  width: calc(100vw - 12rem);
+  padding: 1rem;
+  grid-area: videolist;
 }

@@ -4,7 +4,7 @@ import { useAuth } from "./context/AuthProvider";
 import { Link, useHistory } from "react-router-dom";
 
 export default function Account() {
-  const { SignUp, dispatchData } = useAuth();
+  const { SignUp } = useAuth();
   const [isLoading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const emailRef = useRef();
@@ -12,7 +12,6 @@ export default function Account() {
   const nameRef = useRef();
 
   const history = useHistory();
-  const SET_USER = "setUser";
 
   async function handleSignIN() {
     setLoading(true);
@@ -25,14 +24,6 @@ export default function Account() {
         passRef.current.value
       );
       if (response.status === 200) {
-        console.log(response);
-        console.log(response.data);
-        console.log(response.data.user);
-        console.log(response.data.user.name);
-        dispatchData({
-          type: SET_USER,
-          currentUser: response.data.user
-        });
         history.push("/login");
       }
     } catch (err) {

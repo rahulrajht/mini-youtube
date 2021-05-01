@@ -1,16 +1,5 @@
-.row {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0.5rem 0;
-}
-.row > .first {
-  height: max-content;
-  text-align: left;
-  color: white;
-}
-
 .video-container {
+  width: 90%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }

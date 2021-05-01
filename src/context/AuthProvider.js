@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
   function logout() {
     localStorage.clear("token");
     localStorage.clear("email");
+    localStorage.clear("name");
   }
 
   return (

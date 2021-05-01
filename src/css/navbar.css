@@ -1,0 +1,99 @@
+/* NavBar */
+.navbar-container {
+  width: 100vw;
+  height: fit-content;
+}
+.left-container {
+  background-color: #6bc7e4;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.menu-logo {
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+  align-items: center;
+  text-align: center;
+}
+.left-container li {
+  list-style: none;
+}
+.search-box {
+  display: flex;
+  width: 450px;
+  background: white;
+  padding: 0rem;
+  margin: 0rem;
+  height: 45px;
+  border-radius: 0px;
+}
+.search {
+  padding: 0rem;
+  height: inherit;
+  width: 200px;
+  max-width: 300px;
+  border-radius: 0;
+}
+.search-btn {
+  color: #f2f6f8;
+  width: 30%;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #232f34;
+}
+.right-container {
+  background-color: rgb(221, 221, 221);
+  margin-right: 5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  align-self: center;
+  width: fit-content;
+}
+
+label {
+  cursor: pointer;
+}
+.account-info {
+  display: none;
+  position: absolute;
+  background: rgb(41, 40, 40);
+  padding: 10px 20px;
+  z-index: 1;
+  padding: 1rem 2rem;
+  width: max-content;
+  top: 4.15rem;
+  right: 2rem;
+}
+.account-info .user-name {
+  width: max-content;
+  border-radius: 15px;
+  padding: 0.5rem 1.5rem;
+  color: rgb(247, 240, 240);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.account-info .user-email {
+  width: max-content;
+  border-radius: 15px;
+  padding: 0.5rem 1.5rem;
+  color: rgb(241, 235, 235);
+}
+.account-info button {
+  padding: 0.5rem 1.5rem;
+  width: max-content;
+  cursor: pointer;
+}
+.user-info .btn-description {
+  font-size: 1.04rem;
+  margin: 1rem;
+  text-align: left;
+  color: var(--text-color);
+}
+
+#toogle {
+  display: none;
+}
+#toogle:checked ~ .account-info {
+  display: block;
+}

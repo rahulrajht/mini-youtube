@@ -1,16 +1,15 @@
 :root {
-  --video-background: #292929;
+  --video-background: #424d50;
   --video-background-rgb: rgb(51, 51, 51);
-  --text-color: #fff;
+  --text-color: rgb(22, 21, 21);
   font-family: "Merriweather Sans", sans-serif;
 }
 
 .video-card-desktop {
-  width: 300px;
-  height: 300px;
+  width: 325px;
+  height: 350px;
   background-color: var(--video-background);
   margin: 0.5rem;
-  color: white;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -19,7 +18,6 @@
   object-fit: contain;
   text-align: left;
   font-weight: lighter;
-  margin-right: 3px;
 }
 .video-info {
   align-self: center;
@@ -47,7 +45,6 @@
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
   margin-left: 3px;
-  color: #c2c2c2;
   text-align: left;
   margin-top: 0.5rem;
 }
@@ -55,7 +52,6 @@
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   margin-left: 3px;
-  color: #c2c2c2;
   text-align: left;
   margin-top: 0.5rem;
 }

@@ -33,14 +33,10 @@ function VideoList() {
   const { videoPlaylist } = useVideo();
 
   return (
-    <div className="row">
-      <div className="video-container">
-        {videoPlaylist.map((item) => (
-          <div key={item._id}>
-            <Video data={item} />
-          </div>
-        ))}
-      </div>
+    <div className="video-container">
+      {videoPlaylist.map((item) => (
+        <Video data={item} />
+      ))}
     </div>
   );
 }

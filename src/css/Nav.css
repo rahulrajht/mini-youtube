@@ -1,11 +1,11 @@
 :root {
-  --nav-background: #b1aeae;
+  --nav-background: #b45a5a;
   --text-color: #fff;
   --text-color-100: #bca035;
   --text-color-50: #9ca3af;
   --shadow-color: #bdbdbd;
   --box-shadow: rgba(243, 244, 246, 0.3);
-  --sidebar-dark: #292828;
+  --sidebar-dark: #424d50;
 
   /* RGBA Colors */
   --border-color: rgba(136, 136, 136, 0.3);
@@ -23,7 +23,6 @@
 }
 .nav {
   width: 100%;
-  height: 4rem;
   display: none;
   align-items: center;
   justify-content: center;
@@ -78,12 +77,8 @@
 .sidebar {
   display: inline-block;
   flex-direction: column;
-  width: 14rem;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  grid-area: sidebar;
+  width: 12rem;
+  height: 100%;
   padding: 1.5rem 0 0 0;
   background-color: var(--sidebar-dark);
   border-right: 1px solid gray;

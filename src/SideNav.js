@@ -14,14 +14,14 @@ export default function SideNav() {
     <>
       <nav className="sidebar">
         <ul className="list sidebar-list">
-          <NavLink to="/home" className="nav-btn sidebar-btn">
+          <NavLink to="/" className="nav-btn sidebar-btn">
             <li className="list-item-inline sidebar-list-item">
               <span className="btn-description">Home</span>
               <FontAwesomeIcon icon={faHome} />
             </li>
           </NavLink>
 
-          <NavLink to="/" className="nav-btn sidebar-btn">
+          <NavLink to="/search" className="nav-btn sidebar-btn">
             <li className="list-item-inline sidebar-list-item">
               <span className="btn-description">Search</span>
               <FontAwesomeIcon icon={faSearch} />

@@ -21,17 +21,7 @@
   --index-5: 5;
   --index-1: 1;
 }
-.nav {
-  width: 100%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background-color: var(--nav-background);
-  z-index: var(--index-10);
-}
+
 .logo {
   color: #f9f9f9;
   font-size: 1.5rem;
@@ -73,61 +63,3 @@
 }
 
 /* Sidebar */
-
-.sidebar {
-  display: inline-block;
-  flex-direction: column;
-  width: 12rem;
-  height: 100%;
-  padding: 1.5rem 0 0 0;
-  background-color: var(--sidebar-dark);
-  border-right: 1px solid gray;
-}
-.sidebar-list-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.5s ease;
-  padding: 1.25rem;
-  margin: 0.5rem 1rem;
-  align-items: center;
-  cursor: pointer;
-  width: 70%;
-  height: 1.5rem;
-}
-.sidebar-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.sidebar-btn {
-  display: flex;
-  flex-direction: row !important;
-  text-decoration: none;
-  justify-content: left;
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-}
-.sidebar .btn-description {
-  font-size: 1.04rem;
-  margin: 0 0 0 1rem;
-  color: var(--text-color);
-}
-.sidebar-btn:focus {
-  transform: none;
-  background-color: transparent;
-}
-.sidebar-list-item:hover {
-  background-color: var(--hover-color);
-  color: #fff;
-}
-
-/* Animation */
-@keyframes drawer {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0;
-  }
-}

@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./css/playvideo.css";
-import SideNav from "./SideNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faList } from "@fortawesome/free-solid-svg-icons";
+import NavBar from "./NavBar";
 
 export default function PlayVideo() {
   const opts = {
@@ -14,10 +14,10 @@ export default function PlayVideo() {
   const { videoId } = useParams();
   return (
     <div className="video-player-container">
-      <SideNav />
+      <NavBar />
 
       <div className="video-player">
-        <YouTube videoId={videoId} opts={opts} onReady={this._onReady} />;
+        <YouTube videoId={videoId} opts={opts} />;
         <div className="util-container">
           <FontAwesomeIcon className="icon" icon={faThumbsUp} />
           <p className="icon">

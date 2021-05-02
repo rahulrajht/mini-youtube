@@ -2,7 +2,6 @@ import React from "react";
 import "./css/nav.css";
 import { useUrl } from "./context/useVideoPlaylistId";
 import requests from "./requests";
-import { useAuth } from "./context/AuthProvider";
 
 export default function Nav() {
   const { setPlaylistId } = useUrl();

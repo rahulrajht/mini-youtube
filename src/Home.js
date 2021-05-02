@@ -1,4 +1,3 @@
-import SideNav from "./SideNav";
 import "./styles.css";
 import VideoList from "./VideoList";
 import Nav from "./Nav";
@@ -10,11 +9,10 @@ export default function Home() {
       <div className="navbar">
         <NavBar />
       </div>
-      <div className="sidenav">
-        <SideNav />
+      <div className="nav">
+        <Nav />
       </div>
       <div className="videolist">
-        <Nav />
         <VideoList />
       </div>
     </div>

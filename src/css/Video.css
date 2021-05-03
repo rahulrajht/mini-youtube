@@ -58,30 +58,28 @@
 .option-container {
   display: flex;
   position: relative;
-  top: -5rem;
+  top: 0rem;
   right: -18rem;
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
   width: 25px;
 }
-#option {
+/* #option {
   display: none;
 }
 #option:checked + .options {
   display: flex;
 }
 .options {
+  position: absolute;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   height: 90px;
-  position: absolute;
   background: rgb(241, 239, 239);
   padding: 1rem;
-  z-index: 10;
-  right: 4rem;
-  bottom: 2.5rem;
+  z-index: 1;
 }
 .option-select1 {
   border-bottom: 1px solid gray;
@@ -96,7 +94,7 @@
   margin-top: 0.25rem;
   background-color: rgb(212, 211, 211);
   cursor: pointer;
-}
+} */
 /* 
 @media only screen and (min-width: 768px){
   .video-card-desktop{

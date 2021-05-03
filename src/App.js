@@ -4,6 +4,7 @@ import PlayVideo from "./PlayVideo";
 import Home from "./Home";
 import Account from "./Account";
 import Login from "./Login";
+import LikedVideos from "./components/LikedVideos";
 
 export default function App() {
   return (
@@ -20,6 +21,9 @@ export default function App() {
         </Route>
         <Route exact path="/login">
           <Login />
+        </Route>
+        <Route exact path="/liked-videos">
+          <LikedVideos />
         </Route>
       </Switch>
     </div>

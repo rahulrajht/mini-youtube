@@ -23,12 +23,20 @@ export function reducer(
     newVideos
   }
 ) {
-  const { likedVideos, savedVideos } = state;
+  const { likedVideos, savedVideos, videoPlaylist } = state;
   switch (type) {
     case SET_NEW_DATA:
       return {
         ...state,
         videoPlaylist: fetchedVideoPlaylist || []
+      };
+
+    case ADD_LIKED_VIDEOS:
+      return {
+        ...state,
+        likedVideos: videoPlaylist.filter(
+          (item) => item.snippet.resourceId.videoId === id
+        )
       };
 
     default:

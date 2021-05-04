@@ -58,8 +58,8 @@ export default function NavBar() {
               <ul className="list sidebar-list">
                 <NavLink to="/" className="nav-btn sidebar-btn">
                   <li className="list-item-inline sidebar-list-item">
-                    <FontAwesomeIcon icon={faHome} />
                     <span className="btn-description">Home</span>
+                    <FontAwesomeIcon icon={faHome} />
                   </li>
                 </NavLink>
 
@@ -72,8 +72,8 @@ export default function NavBar() {
 
                 <NavLink to="/liked-videos" className="nav-btn sidebar-btn">
                   <li className="list-item-inline sidebar-list-item">
-                    <FontAwesomeIcon icon={faThumbsUp} />
                     <span className="btn-description">Liked </span>
+                    <FontAwesomeIcon icon={faThumbsUp} />
                   </li>
                 </NavLink>
 
@@ -89,8 +89,8 @@ export default function NavBar() {
                   className="nav-btn sidebar-btn"
                 >
                   <li className="list-item-inline sidebar-list-item">
-                    <FontAwesomeIcon icon={faUser} />
                     <span className="btn-description">Account</span>
+                    <FontAwesomeIcon icon={faUser} />
                   </li>
                 </Link>
               </ul>
@@ -118,17 +118,17 @@ export default function NavBar() {
 
                   <NavLink to="/liked-videos">
                     <li>
-                      <FontAwesomeIcon icon={faThumbsUp} />
                       <span className="btn-description">Liked </span>
+                      <FontAwesomeIcon icon={faThumbsUp} />
                     </li>
                   </NavLink>
 
-                  <NavLink to="/playlist">
+                  {/* <NavLink to="/playlist">
                     <li>
                       <FontAwesomeIcon icon={faList} />
                       <span className="btn-description">Playlist</span>
                     </li>
-                  </NavLink>
+                  </NavLink> */}
 
                   <button onClick={LogOut}>Sign Out</button>
                 </div>

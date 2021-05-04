@@ -138,25 +138,22 @@ label {
 .sidebar-list-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   transition: 0.5s ease;
-  padding: 1.25rem;
-  margin: 0.5rem 1rem;
-  align-items: center;
+  padding: 0.5rem 1.25rem;
+  margin: 1rem;
   cursor: pointer;
-  width: 70%;
-  height: 1.5rem;
+  width: 80%;
+  flex-wrap: wrap;
 }
 .sidebar-list {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 .sidebar-btn {
   display: flex;
   flex-direction: row !important;
   text-decoration: none;
-  justify-content: left;
+  justify-content: center;
   margin: 0 0 1.5rem 0;
   padding: 0;
 }
@@ -170,6 +167,6 @@ label {
   background-color: transparent;
 }
 .sidebar-list-item:hover {
-  background-color: var(--hover-color);
+  background-color: rgba(51, 51, 51, 0.5);
   color: #fff;
 }

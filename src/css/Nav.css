@@ -22,10 +22,6 @@
   --index-1: 1;
 }
 
-.logo {
-  color: #f9f9f9;
-  font-size: 1.5rem;
-}
 .nav-btn {
   display: flex;
   justify-content: center;
@@ -54,9 +50,7 @@
   justify-content: center;
   padding: 0;
 }
-.list-item-inline {
-  display: inline-block;
-}
+
 .nav-btn:focus {
   transform: scale(0.9);
   background-color: var(--hover-color);

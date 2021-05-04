@@ -41,7 +41,6 @@ export default function Video(props) {
         <div className="video-info">
           <Link to={`/video/${videoId}`} className="video-text">
             <p className="video-text">{title}</p>
-            <small className="credits">{channelTitle}</small>
             <small className="date">{publishedAt}</small>
           </Link>
           {isFromLiked && (

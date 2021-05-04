@@ -40,3 +40,15 @@
   bottom: 0;
   margin: 0;
 }
+@media only screen and (max-width: 650px) {
+  .nav {
+    width: 100%;
+    left: 1rem;
+  }
+  .videolist {
+    width: 90%;
+    margin: 0 auto;
+    top: 10rem;
+    left: 1rem;
+  }
+}

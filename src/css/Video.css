@@ -6,8 +6,8 @@
 }
 
 .video-card-desktop {
-  width: 325px;
-  height: 350px;
+  max-width: 325px;
+  width: 90%;
   background-color: var(--video-background);
   margin: 0.5rem;
   display: flex;
@@ -65,50 +65,3 @@
   cursor: pointer;
   width: 25px;
 }
-/* #option {
-  display: none;
-}
-#option:checked + .options {
-  display: flex;
-}
-.options {
-  position: absolute;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 90px;
-  background: rgb(241, 239, 239);
-  padding: 1rem;
-  z-index: 1;
-}
-.option-select1 {
-  border-bottom: 1px solid gray;
-  margin-bottom: 0.25rem;
-  background-color: rgb(212, 211, 211);
-  padding: 0.25rem;
-  cursor: pointer;
-}
-.option-select2 {
-  border-bottom: 1px solid gray;
-  padding: 0.25rem;
-  margin-top: 0.25rem;
-  background-color: rgb(212, 211, 211);
-  cursor: pointer;
-} */
-/* 
-@media only screen and (min-width: 768px){
-  .video-card-desktop{
-      display:flex;
-      margin: 0 2rem 0.5rem 0 !important;
-      width:99% !important;
-}
-  .video-card{
-      display:none
-  }
-}
-@media only screen and (max-width: 768px){
-  .video-card-desktop{
-      display:flex !important;
-      width:100%;
-  }   
-} */

@@ -46,8 +46,8 @@ export default function NavBar() {
               {" "}
               &#9776;{" "}
             </label>
-            <span className="logo">
-              <img src={logo} alt="LOGO" />
+            <span>
+              <img className="logo" src={logo} alt="LOGO" />
             </span>
           </div>
           <div id="sidenav" className="sidenav-slider">

@@ -20,17 +20,17 @@ export default function PlayVideo() {
   toast.configure();
 
   const opts = {
-    height: "500px",
+    height: "400px",
     width: "100%",
     playerVars: { autoplay: 1 }
   };
 
   async function actionButton(videoId, type) {
+    setAction("like");
     if (type === "like") {
       const data = videoPlaylist.filter(
         (item) => item.snippet.resourceId.videoId === videoId
       );
-
       const { snippet } = data[0];
       const { title, thumbnails } = snippet;
       const { medium } = thumbnails;

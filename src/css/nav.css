@@ -19,3 +19,16 @@
   color: #131212;
   cursor: pointer;
 }
+@media only screen and (max-width: 650px) {
+  .nav-container {
+    overflow-x: scroll;
+  }
+  .nav-container > .left {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  .nav-container > .left > li {
+    width: fit-content;
+    margin-left: 0.5rem;
+  }
+}

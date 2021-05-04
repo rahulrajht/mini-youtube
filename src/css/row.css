@@ -4,3 +4,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+@media only screen and (max-width: 650px) {
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

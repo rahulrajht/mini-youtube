@@ -62,3 +62,13 @@ a {
 a:hover {
   text-decoration: underline;
 }
+@media only screen and (max-width: 650px) {
+  .form {
+    background-color: #ffffff;
+    width: 90%;
+    margin: 1rem auto;
+  }
+  input {
+    width: 80%;
+  }
+}

@@ -13,7 +13,6 @@
   padding: 0.5rem;
 }
 .menu-logo {
-  position: relative;
   display: flex;
   justify-content: space-between;
   width: 10rem;
@@ -24,8 +23,10 @@
   list-style: none;
 }
 .search-box {
+  position: relative;
   display: flex;
-  width: 450px;
+  width: 70%;
+  max-width: 400px;
   background: white;
   padding: 0rem;
   margin: 0rem;
@@ -35,20 +36,24 @@
 .search {
   padding: 0rem;
   height: inherit;
-  width: 200px;
   max-width: 300px;
   border-radius: 0;
 }
 .search-btn {
+  position: absolute;
+  right: 0;
   color: #f2f6f8;
   width: 30%;
+  height: 100%;
   padding: 0.5rem;
   text-align: center;
   background-color: #232f34;
 }
 .right-container {
+  position: relative;
+  right: 0;
   background-color: rgb(221, 221, 221);
-  margin-right: 5rem;
+
   padding: 0.5rem;
   border-radius: 50%;
   align-self: center;
@@ -69,8 +74,8 @@ label {
   z-index: 1;
   padding: 1rem 2rem;
   width: max-content;
-  top: 4.15rem;
-  right: 2rem;
+  top: 3.25rem;
+  right: 0;
 }
 .account-info .user-name {
   width: max-content;
@@ -170,4 +175,30 @@ label {
 .sidebar-list-item:hover {
   background-color: rgba(51, 51, 51, 0.5);
   color: #fff;
+}
+
+/* Responsive */
+@media only screen and (max-width: 650px) {
+  .navbar-container {
+    position: fixed;
+    width: 100vw;
+    height: fit-content;
+    z-index: 1;
+  }
+  .left-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  .search-box {
+    display: none;
+  }
+  .sidebar {
+    width: 8rem;
+  }
+  .sidebar-list-item {
+    padding: 0.5rem;
+    margin: 1rem 0.25rem;
+    width: 100%;
+  }
 }

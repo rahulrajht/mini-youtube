@@ -10,6 +10,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../context/AuthProvider";
 import { Link, NavLink, useHistory } from "react-router-dom";
+import logo from "../utils/logo.png";
+
 export default function NavBar() {
   const { logout, dispatchData } = useAuth();
   const SET_USER = "setUser";
@@ -44,7 +46,9 @@ export default function NavBar() {
               {" "}
               &#9776;{" "}
             </label>
-            <span>LOGO</span>
+            <span className="logo">
+              <img src={logo} alt="LOGO" />
+            </span>
           </div>
           <div id="sidenav" className="sidenav-slider">
             <nav className="sidebar">

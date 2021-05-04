@@ -53,7 +53,10 @@
   align-self: center;
   width: fit-content;
 }
-
+.logo {
+  margin-left: 2rem;
+  margin-top: 10px;
+}
 label {
   cursor: pointer;
 }

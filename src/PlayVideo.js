@@ -45,7 +45,7 @@ export default function PlayVideo() {
         }
       );
       if (response.status === 200) {
-        toast.success("Added to liked", { autoClose: 3000 });
+        toast.dark("Added to liked", { autoClose: 3000 });
         setBlueIcon("blueIcon");
         setAction("dislike");
       }
@@ -55,7 +55,7 @@ export default function PlayVideo() {
         "https://Auth-API.rahulgupta99.repl.co/save/liked-videos-remove",
         { email: email, id: videoId }
       );
-      toast.success("Removed to liked", { autoClose: 3000 });
+      toast.dark("Removed from liked", { autoClose: 3000 });
       setBlueIcon("");
       setAction("like");
     }

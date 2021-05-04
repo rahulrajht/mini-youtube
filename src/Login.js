@@ -24,13 +24,14 @@ export default function Login() {
       localStorage.setItem("email", JSON.stringify(result.data.email));
       localStorage.setItem("name", JSON.stringify(result.data.name));
       localStorage.setItem("isUserLogin", JSON.stringify(true));
-
-      dispatchData({
-        type: SET_USER,
-        currentUser: result.data.email
-      });
-      history.push(location.state.from);
-    } catch {
+      if (result.status === 200) {
+        dispatchData({
+          type: SET_USER,
+          currentUser: result.data.email
+        });
+        history.push(location.state.from);
+      }
+    } catch (err) {
       setError("Failed to Log In");
     }
     setLoading(false);

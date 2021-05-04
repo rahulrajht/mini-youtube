@@ -3,7 +3,11 @@ import "./css/account.css";
 import { useAuth } from "./context/AuthProvider";
 import { Link, useHistory } from "react-router-dom";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function Account() {
+  toast.configure();
   const { SignUp } = useAuth();
   const [isLoading, setLoading] = useState(false);
   const [err, setErr] = useState("");
@@ -24,6 +28,9 @@ export default function Account() {
         passRef.current.value
       );
       if (response.status === 200) {
+        toast.dark("Account created Successfully Please Login to Continue.", {
+          autoClose: 5000
+        });
         history.push("/login");
       }
     } catch (err) {
@@ -52,7 +59,7 @@ export default function Account() {
           placeholder="Password"
         />
         <button disabled={isLoading} onClick={handleSignIN}>
-          {isLoading ? "Sign in ..." : "Sign in"}
+          {isLoading ? "In progress ..." : "Sign in"}
         </button>
         <Link to="/login"> Already Have an Account? Log In </Link>
       </div>

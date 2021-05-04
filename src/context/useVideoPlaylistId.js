@@ -1,5 +1,5 @@
 import { useContext, createContext, useState } from "react";
-import requests from "../requests";
+import requests from "../components/requests";
 export const urlContext = createContext();
 
 export function UrlProvider({ children }) {

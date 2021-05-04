@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Spinner from "../components/Spinner";
-import Video from "../Video";
-import NavBar from "../NavBar";
+import Spinner from "./Spinner";
+import Video from "./Video";
+import NavBar from "./NavBar";
 import "../css/likedvideo.css";
 export default function LikedVideos() {
   const [likedvideos, setLikedVideos] = useState([]);

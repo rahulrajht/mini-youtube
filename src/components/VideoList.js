@@ -13,8 +13,8 @@ function VideoList() {
       url: playlistId,
 
       headers: {
-        "x-rapidapi-key": "26dc9128d0mshe57c300c2573c60p10e0b2jsne8edfc946cd5",
-        "x-rapidapi-host": "youtube-v31.p.rapidapi.com"
+        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+        "x-rapidapi-host": process.env.REACT_APP_API_HOST
       }
     };
     axios

@@ -1,6 +1,6 @@
 import React from "react";
-import "./css/nav.css";
-import { useUrl } from "./context/useVideoPlaylistId";
+import "../css/nav.css";
+import { useUrl } from "../context/useVideoPlaylistId";
 import requests from "./requests";
 
 export default function Nav() {

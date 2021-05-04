@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../styles.css";
 import VideoList from "./VideoList";
 import Nav from "./Nav";
 import NavBar from "./NavBar";

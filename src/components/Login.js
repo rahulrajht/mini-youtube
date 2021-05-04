@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import "./css/account.css";
+import "../css/account.css";
 
-import { useAuth } from "./context/AuthProvider";
+import { useAuth } from "../context/AuthProvider";
 
 export default function Login() {
   const { Login, dispatchData } = useAuth();

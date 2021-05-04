@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./css/navbar.css";
+import React from "react";
+import "../css/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -8,7 +8,7 @@ import {
   faHome,
   faSearch
 } from "@fortawesome/free-solid-svg-icons";
-import { useAuth } from "./context/AuthProvider";
+import { useAuth } from "../context/AuthProvider";
 import { Link, NavLink, useHistory } from "react-router-dom";
 export default function NavBar() {
   const { logout, dispatchData } = useAuth();

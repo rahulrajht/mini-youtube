@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import Video from "./Video";
-import { useUrl } from "./context/useVideoPlaylistId";
-import { useVideo } from "./context/videoProvider";
-import "./css/row.css";
+import { useUrl } from "../context/useVideoPlaylistId";
+import { useVideo } from "../context/videoProvider";
+import "../css/row.css";
 function VideoList() {
   const { playlistId } = useUrl();
   const { dispatchData } = useVideo();

@@ -1,17 +1,24 @@
 import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
-import "./css/Video.css";
+import "../css/Video.css";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Video(props) {
   const email = JSON.parse(localStorage.getItem("email"));
-
+  toast.configure();
   async function removeLikeVideo(videoId) {
-    await axios.post(
-      "https://Auth-API.rahulgupta99.repl.co/save/liked-videos-remove",
-      { email: email, id: videoId }
-    );
-    window.location.reload(false);
+    try {
+      await axios.post(
+        "https://Auth-API.rahulgupta99.repl.co/save/liked-videos-remove",
+        { email: email, id: videoId }
+      );
+      window.location.reload(false);
+    } catch {
+      toast.warning("Something went wrong. Please try again");
+    }
   }
   const { data } = props;
   let isFromLiked = null;

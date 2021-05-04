@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
-import "./css/playvideo.css";
+import "../css/playvideo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faList } from "@fortawesome/free-solid-svg-icons";
 import NavBar from "./NavBar";
-import { useVideo } from "./context/videoProvider";
+import { useVideo } from "../context/videoProvider";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

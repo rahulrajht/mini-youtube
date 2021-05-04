@@ -63,12 +63,12 @@ export default function NavBar() {
                   </li>
                 </NavLink>
 
-                <NavLink to="/search" className="nav-btn sidebar-btn">
+                {/* <NavLink to="/search" className="nav-btn sidebar-btn">
                   <li className="list-item-inline sidebar-list-item">
                     <FontAwesomeIcon icon={faSearch} />
                     <span className="btn-description">Search</span>
                   </li>
-                </NavLink>
+                </NavLink> */}
 
                 <NavLink to="/liked-videos" className="nav-btn sidebar-btn">
                   <li className="list-item-inline sidebar-list-item">
@@ -77,12 +77,12 @@ export default function NavBar() {
                   </li>
                 </NavLink>
 
-                <NavLink to="/playlist" className="nav-btn sidebar-btn">
+                {/* <NavLink to="/playlist" className="nav-btn sidebar-btn">
                   <li className="list-item-inline sidebar-list-item">
                     <FontAwesomeIcon icon={faList} />
                     <span className="btn-description">Playlist</span>
                   </li>
-                </NavLink>
+                </NavLink> */}
 
                 <Link
                   to={{ pathname: "/account", state: { from: "/" } }}

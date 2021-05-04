@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import "./css/account.css";
 
 import { useAuth } from "./context/AuthProvider";
+
 export default function Login() {
   const { Login, dispatchData } = useAuth();
   const emailRef = useRef();
@@ -10,6 +11,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
   const history = useHistory();
+  const location = useLocation();
   const SET_USER = "setUser";
 
   async function HandleLogin() {
@@ -21,11 +23,13 @@ export default function Login() {
       localStorage.setItem("token", JSON.stringify(result.data.token));
       localStorage.setItem("email", JSON.stringify(result.data.email));
       localStorage.setItem("name", JSON.stringify(result.data.name));
+      localStorage.setItem("isUserLogin", JSON.stringify(true));
+
       dispatchData({
         type: SET_USER,
         currentUser: result.data.email
       });
-      history.push("/");
+      history.push(location.state.from);
     } catch {
       setError("Failed to Log In");
     }

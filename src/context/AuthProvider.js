@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.clear("token");
     localStorage.clear("email");
     localStorage.clear("name");
+    localStorage.clear("isUserLogin");
   }
 
   return (

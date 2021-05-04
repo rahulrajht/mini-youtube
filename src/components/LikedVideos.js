@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Spinner from "../components/Spinner";
 import Video from "../Video";
 import NavBar from "../NavBar";
-import { Link } from "react-router-dom";
 import "../css/likedvideo.css";
 export default function LikedVideos() {
   const [likedvideos, setLikedVideos] = useState([]);
+  const [isLoading, setLoading] = useState(true);
   const email = JSON.parse(localStorage.getItem("email"));
 
   useEffect(() => {
@@ -14,6 +15,7 @@ export default function LikedVideos() {
       if (email) {
         const res = await axios.post(url, { email: email });
         setLikedVideos(res.data);
+        setLoading(false);
       }
     }
     getData();
@@ -23,11 +25,15 @@ export default function LikedVideos() {
     return (
       <div>
         <NavBar />
-        <div className="liked-video-container">
-          {likedvideos.map((item) => (
-            <Video data={item} />
-          ))}
-        </div>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <div className="liked-video-container">
+            {likedvideos.map((item) => (
+              <Video data={item} />
+            ))}
+          </div>
+        )}
       </div>
     );
   else {
@@ -36,48 +42,14 @@ export default function LikedVideos() {
         <div>
           <NavBar />
         </div>
-        <div className="fallback-msg-container">
-          <h4>You are not logged In. </h4>
-          <h4>Please Login first to see your liked videos. </h4>
-          <Link className="link" to="/login">
-            {" "}
-            Log In{" "}
-          </Link>
-        </div>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <div className="fallback-msg-container">
+            <h4>There is no any liked video </h4>
+          </div>
+        )}
       </div>
     );
   }
-  // // console.log(email === null);
-  // // if (email === null) {
-  // //   return (
-  // //     <div>
-  // //       <div>
-  // //         <NavBar />
-  // //       </div>
-  // //       <div style={{ margin: "5rem" }}>Empty</div>
-  // //     </div>
-  // //   );
-
-  // } else {
-  //   // console.log("1");
-  //   // async function getData() {
-  //   //   const res = await axios.post(
-  //   //     "https://Auth-API.rahulgupta99.repl.co/save/liked",
-  //   //     {
-  //   //       email: email
-  //   //     }
-  //   //   );
-  //   //   console.log(res);
-  //   //   setLikedVideos(res.data);
-  //   // }
-  //   // getData();
-  //   // return (
-  //   //   <div className="video-container">
-  //   //     <NavBar />
-  //   //     {likedvideos.map((item) => (
-  //   //       <Video data={item} />
-  //   //     ))}
-  //   //   </div>
-  //   // );
-  // }
 }

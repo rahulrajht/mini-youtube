@@ -6,9 +6,18 @@ import { faThumbsUp, faList } from "@fortawesome/free-solid-svg-icons";
 import NavBar from "./NavBar";
 import { useVideo } from "./context/videoProvider";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 export default function PlayVideo() {
+  const { videoId } = useParams();
   const { videoPlaylist } = useVideo();
+  const [blueIcon, setBlueIcon] = useState("");
+  const [action, setAction] = useState("like");
+  const email = JSON.parse(localStorage.getItem("email"));
+
+  toast.configure();
 
   const opts = {
     height: "500px",
@@ -16,26 +25,41 @@ export default function PlayVideo() {
     playerVars: { autoplay: 1 }
   };
 
-  async function addVideoToLike(videoId) {
-    const data = videoPlaylist.filter(
-      (item) => item.snippet.resourceId.videoId === videoId
-    );
-    const { snippet } = data[0];
-    const { title, thumbnails } = snippet;
-    const { medium } = thumbnails;
-    const { url } = medium;
-    const response = await axios.post(
-      "https://Auth-API.rahulgupta99.repl.co/save/liked-videos",
-      {
-        title: title,
-        thumbnails: url,
-        videoId: videoId,
-        email: JSON.parse(localStorage.getItem("email"))
+  async function actionButton(videoId, type) {
+    if (type === "like") {
+      const data = videoPlaylist.filter(
+        (item) => item.snippet.resourceId.videoId === videoId
+      );
+
+      const { snippet } = data[0];
+      const { title, thumbnails } = snippet;
+      const { medium } = thumbnails;
+      const { url } = medium;
+      const response = await axios.post(
+        "https://Auth-API.rahulgupta99.repl.co/save/liked-videos",
+        {
+          title: title,
+          thumbnails: url,
+          videoId: videoId,
+          email: JSON.parse(localStorage.getItem("email"))
+        }
+      );
+      if (response.status === 200) {
+        toast.success("Added to liked", { autoClose: 3000 });
+        setBlueIcon("blueIcon");
+        setAction("dislike");
       }
-    );
-    console.log(response);
+    }
+    if (type === "dislike") {
+      await axios.post(
+        "https://Auth-API.rahulgupta99.repl.co/save/liked-videos-remove",
+        { email: email, id: videoId }
+      );
+      toast.success("Removed to liked", { autoClose: 3000 });
+      setBlueIcon("");
+      setAction("like");
+    }
   }
-  const { videoId } = useParams();
 
   return (
     <div className="video-player-container">
@@ -45,9 +69,9 @@ export default function PlayVideo() {
         <YouTube videoId={videoId} opts={opts} />;
         <div className="util-container">
           <FontAwesomeIcon
-            className="icon"
+            className={`icon ${blueIcon}`}
             icon={faThumbsUp}
-            onClick={() => addVideoToLike(videoId)}
+            onClick={() => actionButton(videoId, `${action}`)}
           />
           <p className="icon">
             <FontAwesomeIcon icon={faList} />

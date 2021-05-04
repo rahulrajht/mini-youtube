@@ -2,16 +2,16 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./css/Video.css";
+
 export default function Video(props) {
-  const email = JSON.parse(localStorage.getItem("name"));
+  const email = JSON.parse(localStorage.getItem("email"));
 
   async function removeLikeVideo(videoId) {
-    console.log(videoId);
-    const res = await axios.post(
+    await axios.post(
       "https://Auth-API.rahulgupta99.repl.co/save/liked-videos-remove",
       { email: email, id: videoId }
     );
-    console.log(res);
+    window.location.reload(false);
   }
   const { data } = props;
   let isFromLiked = null;

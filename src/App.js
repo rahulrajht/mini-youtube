@@ -5,26 +5,17 @@ import Home from "./Home";
 import Account from "./Account";
 import Login from "./Login";
 import LikedVideos from "./components/LikedVideos";
+import PrivateRoute from "./PrivateRoute";
 
 export default function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/video/:videoId">
-          <PlayVideo />
-        </Route>
-        <Route exact path="/account">
-          <Account />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/liked-videos">
-          <LikedVideos />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/video/:videoId" component={PlayVideo} />
+        <Route exact path="/account" component={Account} />
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute exact path="/liked-videos" component={LikedVideos} />
       </Switch>
     </div>
   );

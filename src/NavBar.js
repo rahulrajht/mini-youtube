@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,19 +9,21 @@ import {
   faSearch
 } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "./context/AuthProvider";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 export default function NavBar() {
   const { logout, dispatchData } = useAuth();
   const SET_USER = "setUser";
   const user = localStorage.getItem("token");
-
+  const history = useHistory();
   async function LogOut() {
     try {
       await logout();
+
       dispatchData({
         type: SET_USER,
         currentUser: null
       });
+      history.push("/");
     } catch {
       console.log("error in logout");
     }

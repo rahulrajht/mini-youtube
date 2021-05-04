@@ -29,7 +29,7 @@ export default function Login() {
           type: SET_USER,
           currentUser: result.data.email
         });
-        history.push(location.state.from);
+        history.push(location.state ? location.state.from : "/");
       }
     } catch (err) {
       setError("Failed to Log In");

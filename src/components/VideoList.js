@@ -7,22 +7,14 @@ import "../css/row.css";
 function VideoList() {
   const { playlistId } = useUrl();
   const { dispatchData } = useVideo();
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      url: playlistId,
 
-      headers: {
-        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-        "x-rapidapi-host": process.env.REACT_APP_API_HOST
-      }
-    };
+  useEffect(() => {
     axios
-      .request(options)
+      .get(playlistId)
       .then(function (response) {
         dispatchData({
           type: "setNewData",
-          fetchedVideoPlaylist: response.data.items
+          fetchedVideoPlaylist: response.data.data
         });
       })
       .catch(function (error) {

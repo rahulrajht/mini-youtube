@@ -14,6 +14,7 @@ export default function LikedVideos() {
       const url = "https://Auth-API.rahulgupta99.repl.co/save/liked";
       if (email) {
         const res = await axios.post(url, { email: email });
+        // console.log(res.data[0].isLiked,"from isLiked");
         setLikedVideos(res.data);
         setLoading(false);
       }
@@ -30,7 +31,7 @@ export default function LikedVideos() {
         ) : (
           <div className="liked-video-container">
             {likedvideos.map((item) => (
-              <Video data={item} />
+              <Video data={item._doc} isLike={item.isLiked} />
             ))}
           </div>
         )}

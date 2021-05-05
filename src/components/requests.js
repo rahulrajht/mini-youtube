@@ -1,13 +1,10 @@
 const requests = {
-  fetchJava:
-    "https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLd3UqWTnYXOnjGmyjD3zbIkyLXP15-6w0&part=snippet&maxResults=300",
+  fetchJava: "https://Auth-API.rahulgupta99.repl.co/video/category/java",
   fetchjavaScript:
-    "https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&part=snippet&maxResults=100",
+    "https://Auth-API.rahulgupta99.repl.co/video/category/javascript",
 
-  fetchNeog:
-    "https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLzvhQUIpvvuj5KPnyPyWsvgyzNkX_ACPA&part=snippet&maxResults=30",
-  fetchReact:
-    "https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLWKjhJtqVAbkArDMazoARtNz1aMwNWmvC&part=snippet&maxResults=30"
+  fetchNeog: "https://Auth-API.rahulgupta99.repl.co/video/category/neog",
+  fetchReact: "https://Auth-API.rahulgupta99.repl.co/video/category/react"
 };
 
 export default requests;

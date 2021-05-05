@@ -104,7 +104,7 @@ export default function NavBar() {
               <FontAwesomeIcon icon={faUser} />
             </label>
             <input type="checkbox" id="toogle" />
-            <div className="account-info">
+            <div className={`account-info ${user ? "Login" : "logout"}`}>
               {user ? (
                 <div className="user-info nav-btn">
                   <p className="user-name">
@@ -132,7 +132,10 @@ export default function NavBar() {
                   <button onClick={LogOut}>Sign Out</button>
                 </div>
               ) : (
-                <Link to="/login"> Log In</Link>
+                <Link className="login-btn" to="/login">
+                  {" "}
+                  Log In
+                </Link>
               )}
             </div>
           </ul>

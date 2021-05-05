@@ -57,7 +57,7 @@ label {
   z-index: 1;
   padding: 1rem 2rem;
   width: max-content;
-  top: 3.25rem;
+  top: -1rem;
   right: 0;
 }
 .account-info .user-name {
@@ -108,14 +108,22 @@ label {
 }
 
 .sidebar {
+  animation: sidebar-slider 0.5s forwards;
+  animation-delay: 0s;
   position: fixed;
   display: flex;
   flex-direction: column;
   width: 12rem;
+  left: -50px;
   height: 100vh;
   padding: 1.5rem 0 0 0;
   background-color: #424d50;
   margin-top: 0.65rem;
+}
+@keyframes sidebar-slider {
+  100% {
+    left: 0px;
+  }
 }
 .sidebar .closebtn {
   position: absolute;
@@ -123,6 +131,11 @@ label {
   right: 15px;
   font-size: 2rem;
   cursor: pointer;
+}
+@keyframes sidebar-slider-close {
+  100% {
+    width: 0rem;
+  }
 }
 .sidebar-list-item {
   display: flex;
@@ -159,7 +172,52 @@ label {
   background-color: rgba(51, 51, 51, 0.5);
   color: #fff;
 }
+.Login {
+  background-color: rgb(51, 51, 51);
+  animation: slider 0.3s forwards;
+  animation-delay: 0s;
+  left: -1px;
+}
+.logout {
+  animation: slide 0.3s forwards;
+  animation-delay: 0s;
+  border-radius: 100px;
+  position: absolute;
+  z-index: 1;
+  height: fit-content;
+  padding: 0rem 2rem;
+  width: 150px;
+  top: -5px;
+  right: 0px;
+}
+.login-btn {
+  position: relative;
+  top: -15px;
+  font-size: 1rem;
+  left: 20px;
+  padding: 0rem;
+  color: white;
+}
+/* Animation */
 
+@-webkit-keyframes slide {
+  100% {
+    right: 55px;
+    width: 150px;
+  }
+}
+
+@keyframes slide {
+  100% {
+    right: 55px;
+    width: 150px;
+  }
+}
+@keyframes slider {
+  100% {
+    left: -250px;
+  }
+}
 /* Responsive */
 @media only screen and (max-width: 800px) {
   .navbar-container {

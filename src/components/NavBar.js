@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faThumbsUp,
   faList,
-  faHome,
-  faSearch
+  faHome
 } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../context/AuthProvider";
 import { Link, NavLink, useHistory } from "react-router-dom";
 import logo from "../utils/logo.png";
+import { useUrl } from "../context/useVideoPlaylistId";
 
 export default function NavBar() {
   const { logout, dispatchData } = useAuth();
   const SET_USER = "setUser";
   const user = localStorage.getItem("token");
   const history = useHistory();
+  const { setSearch } = useUrl();
+
   async function LogOut() {
     try {
       await logout();
@@ -63,13 +65,6 @@ export default function NavBar() {
                   </li>
                 </NavLink>
 
-                {/* <NavLink to="/search" className="nav-btn sidebar-btn">
-                  <li className="list-item-inline sidebar-list-item">
-                    <FontAwesomeIcon icon={faSearch} />
-                    <span className="btn-description">Search</span>
-                  </li>
-                </NavLink> */}
-
                 <NavLink to="/liked-videos" className="nav-btn sidebar-btn">
                   <li className="list-item-inline sidebar-list-item">
                     <span className="btn-description">Liked </span>
@@ -96,9 +91,13 @@ export default function NavBar() {
               </ul>
             </nav>
           </div>
-          <div className="search-box">
-            <input type="text" className="search-box" />
-            <div className="search-btn">Search</div>
+          <div>
+            <input
+              className="search-box"
+              type="text"
+              placeholder="search ... "
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
           <ul className="right-container">
             <label className="label" htmlFor="toogle">

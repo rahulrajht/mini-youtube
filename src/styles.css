@@ -26,13 +26,13 @@
 .nav {
   position: absolute;
   grid-area: nav;
-  width: calc(100% - 12rem);
+  width: 70%;
   top: 5rem;
   left: 14rem;
 }
 .videolist {
   position: absolute;
-  width: calc(100% - 10rem);
+  width: auto;
   grid-area: videolist;
   top: 10rem;
   left: 13rem;

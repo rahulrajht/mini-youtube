@@ -5,7 +5,7 @@ import { useUrl } from "../context/useVideoPlaylistId";
 import { useVideo } from "../context/videoProvider";
 import "../css/row.css";
 function VideoList() {
-  const { playlistId } = useUrl();
+  const { playlistId, searchTerm } = useUrl();
   const { dispatchData } = useVideo();
 
   useEffect(() => {
@@ -26,9 +26,18 @@ function VideoList() {
 
   return (
     <div className="video-container">
-      {videoPlaylist.map((item) => (
-        <Video data={item} />
-      ))}
+      {videoPlaylist
+        .filter((item) => {
+          if (searchTerm === "") return item;
+          else if (
+            item.title.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return item;
+          }
+        })
+        .map((item) => (
+          <Video data={item} />
+        ))}
     </div>
   );
 }

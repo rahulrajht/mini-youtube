@@ -1,5 +1,4 @@
 .video-container {
-  background-color: rgb(239, 241, 241);
   width: 90%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

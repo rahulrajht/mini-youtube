@@ -7,7 +7,9 @@ import NavBar from "./NavBar";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Spineer from "../components/Spinner";
+import { useVideo } from "../context/videoProvider";
 
 export default function PlayVideo(props) {
   toast.configure();
@@ -17,13 +19,18 @@ export default function PlayVideo(props) {
   const [action, setAction] = useState(isLiked ? "dislike" : "like");
   const email = JSON.parse(localStorage.getItem("email"));
   const history = useHistory();
+  const [isLoading, setLoading] = useState(true);
+  const inputRef = useRef();
+  const { dispatchData, videoPlaylist, savedVideos } = useVideo();
 
   const opts = {
     height: "400px",
     width: "100%",
     playerVars: { autoplay: 1 }
   };
-
+  setTimeout(function () {
+    setLoading(false);
+  }, 3000);
   async function actionButton(videoId, type) {
     const isLogin = JSON.parse(localStorage.getItem("isUserLogin"));
     if (!isLogin)
@@ -53,25 +60,84 @@ export default function PlayVideo(props) {
       setAction("like");
     }
   }
+  async function createPlyList() {
+    const playListName = inputRef.current.value;
+    dispatchData({
+      type: "setvideoPlaylist",
+      data: { name: playListName, list: [] }
+    });
+    toast.success("Playlist created " + playListName);
+    // const body = {
+    //   name: playListName,
+    //   email: email
+    // };
+    // const url = "https://Auth-API.rahulgupta99.repl.co/save/new-playlist";
+    // const res = await axios.post(url, body);
+    // if (res.status === 200) {
+    //   toast.success("Playlist created.");
+    // }
+    // const response = await axios.get(
+    //   "https://Auth-API.rahulgupta99.repl.co/save/playlist/" + email
+    // );
+    // setPlayList(response.data);
+  }
+  async function addPlayList(name) {
+    const data = [];
+    for (var i = 0; i < videoPlaylist.length; i++) {
+      if (videoPlaylist[i].videoId === videoId) {
+        console.log(videoPlaylist[i]);
+        data.push(videoPlaylist[i]);
+        break;
+      }
+    }
+    console.log(data);
+    dispatchData({
+      type: "addtoplaylist",
+      data: { name, items: data[0] }
+    });
+    toast.success("Video added to" + name);
+    // const body = {
+    //   name: name,
+    //   email: email,
+    //   id: videoId
+    // };
+    // console.log(body);
+    // const res = await axios.post(
+    //   "https://Auth-API.rahulgupta99.repl.co/save/playlist",
+    //   body
+    // );
+    // toast.info("Added");
+    // console.log(res);
+  }
 
   return (
     <div className="video-player-container">
       <NavBar />
-
-      <div className="video-player">
-        <YouTube videoId={videoId} opts={opts} />;
-        <div className="util-container">
-          <FontAwesomeIcon
-            className={`icon ${blueIcon}`}
-            icon={faThumbsUp}
-            onClick={() => actionButton(videoId, `${action}`)}
-          />
-          <p className="icon">
-            <FontAwesomeIcon icon={faList} />
-            Create playlist
-          </p>
+      {isLoading ? (
+        <Spineer />
+      ) : (
+        <div className="video-player">
+          <YouTube videoId={videoId} opts={opts} />;
+          <div className="util-container">
+            <FontAwesomeIcon
+              className={`icon ${blueIcon}`}
+              icon={faThumbsUp}
+              onClick={() => actionButton(videoId, `${action}`)}
+            />
+            <p className="icon">Add to Playlist</p>
+          </div>
         </div>
+      )}
+      <div className="create-playlist">
+        <input ref={inputRef} type="text" placeholder="Playlist Name" />
+        <button onClick={createPlyList}> Create </button>
+        {savedVideos.map((item) => (
+          <div>
+            <button onClick={() => addPlayList(item.name)}>{item.name}</button>
+          </div>
+        ))}
       </div>
+      {}
     </div>
   );
 }

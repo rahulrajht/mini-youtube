@@ -1,0 +1,248 @@
+/* NavBar */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  z-index: 1;
+}
+.left-container {
+  background-color: #6bc7e4;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.menu-logo {
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+  align-items: center;
+  text-align: center;
+}
+.left-container li {
+  list-style: none;
+}
+.search-box {
+  width: 100vw;
+  max-width: 400px;
+  background: white;
+  padding: 1rem;
+  margin: 0rem;
+  height: 45px;
+  font-size: 1rem;
+  border-radius: 100px;
+}
+.right-container {
+  position: relative;
+  right: 0;
+  background-color: rgb(221, 221, 221);
+
+  padding: 0.5rem;
+  border-radius: 50%;
+  align-self: center;
+  width: fit-content;
+}
+.logo {
+  margin-left: 2rem;
+  margin-top: 10px;
+}
+label {
+  cursor: pointer;
+}
+.account-info {
+  display: none;
+  position: absolute;
+  background: #424d50;
+  padding: 10px 20px;
+  z-index: 1;
+  padding: 1rem 2rem;
+  width: max-content;
+  top: -1rem;
+  right: 0;
+}
+.account-info .user-name {
+  width: max-content;
+  border-radius: 15px;
+  padding: 0.5rem 1.5rem;
+  color: rgb(247, 240, 240);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.account-info .user-email {
+  width: max-content;
+  border-radius: 15px;
+  padding: 0.5rem 1.5rem;
+  color: rgb(241, 235, 235);
+}
+.account-info button {
+  padding: 0.5rem 1.5rem;
+  width: max-content;
+  cursor: pointer;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+.user-info .btn-description {
+  font-size: 1.04rem;
+  margin: 1rem;
+  text-align: left;
+  color: var(--text-color);
+}
+
+#toogle {
+  display: none;
+}
+#toogle:checked ~ .account-info {
+  display: flex;
+}
+.sidenav-slider {
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  height: 100vh;
+}
+
+.sidebar {
+  animation: sidebar-slider 0.5s forwards;
+  animation-delay: 0s;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+  left: -50px;
+  height: 100vh;
+  padding: 1.5rem 0 0 0;
+  background-color: #424d50;
+  margin-top: 0.65rem;
+}
+@keyframes sidebar-slider {
+  100% {
+    left: 0px;
+  }
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+@keyframes sidebar-slider-close {
+  100% {
+    width: 0rem;
+  }
+}
+.sidebar-list-item {
+  display: flex;
+  justify-content: space-between;
+  transition: 0.5s ease;
+  padding: 0.5rem 1.25rem;
+  margin: 1rem;
+  cursor: pointer;
+  width: 80%;
+  flex-wrap: wrap;
+}
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-btn {
+  display: flex;
+  flex-direction: row !important;
+  text-decoration: none;
+  justify-content: center;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+}
+.sidebar .btn-description {
+  font-size: 1.04rem;
+  margin: 0 0 0 1rem;
+  color: var(--text-color);
+}
+.sidebar-btn:focus {
+  transform: none;
+  background-color: transparent;
+}
+.sidebar-list-item:hover {
+  background-color: rgba(51, 51, 51, 0.5);
+  color: #fff;
+}
+.Login {
+  background-color: rgb(51, 51, 51);
+  animation: slider 0.3s forwards;
+  animation-delay: 0s;
+  left: -1px;
+}
+.logout {
+  animation: slide 0.3s forwards;
+  animation-delay: 0s;
+  border-radius: 100px;
+  position: absolute;
+  z-index: 1;
+  height: fit-content;
+  padding: 0rem 2rem;
+  width: 150px;
+  top: -5px;
+  right: 0px;
+}
+.login-btn {
+  position: relative;
+  top: -15px;
+  font-size: 1rem;
+  left: 20px;
+  padding: 0rem;
+  color: white;
+}
+/* Animation */
+
+@-webkit-keyframes slide {
+  100% {
+    right: 55px;
+    width: 150px;
+  }
+}
+
+@keyframes slide {
+  100% {
+    right: 55px;
+    width: 150px;
+  }
+}
+@keyframes slider {
+  100% {
+    left: -250px;
+  }
+}
+/* Responsive */
+@media only screen and (max-width: 800px) {
+  .navbar-container {
+    position: fixed;
+    width: 100vw;
+    height: fit-content;
+    z-index: 1;
+  }
+  .left-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  .search-box {
+    display: inline-block;
+    width: 90%;
+  }
+  .sidebar {
+    position: absolute;
+    width: 8rem;
+    top: -15px;
+  }
+  .sidebar-list-item {
+    padding: 0.5rem;
+    margin: 1rem 0.25rem;
+    width: 100%;
+  }
+}

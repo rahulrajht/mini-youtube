@@ -1,0 +1,59 @@
+:root {
+  --nav-background: #b45a5a;
+  --text-color: #fff;
+  --text-color-100: #bca035;
+  --text-color-50: #9ca3af;
+  --shadow-color: #bdbdbd;
+  --box-shadow: rgba(243, 244, 246, 0.3);
+  --sidebar-dark: #424d50;
+
+  /* RGBA Colors */
+  --border-color: rgba(136, 136, 136, 0.3);
+
+  /* Effects */
+  --hover-color: rgba(33, 33, 33, 0.1);
+  --hover-color: rgba(51, 51, 51, 0.3);
+
+  /* Z-indexes */
+  --highest-index: 30;
+  --index-20: 20;
+  --index-10: 10;
+  --index-5: 5;
+  --index-1: 1;
+}
+
+.nav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  margin: 0 1.7rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  transition: 0.3s ease;
+}
+.btn-description {
+  color: rgb(17, 17, 17);
+  font-weight: lighter;
+  font-size: 0.7rem;
+  font-family: "Roboto", sans-serif;
+  margin-top: -3px;
+}
+.nav-btn img {
+  width: 1.6rem;
+}
+.list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav-btn:focus {
+  transform: scale(0.9);
+  background-color: var(--hover-color);
+}
+
+/* Sidebar */

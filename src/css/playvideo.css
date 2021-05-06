@@ -1,0 +1,71 @@
+.video-player-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-top: 2rem;
+}
+.video-player {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-left: 14rem;
+  flex-direction: column;
+  justify-content: start;
+}
+.util-container {
+  position: absolute;
+  background-color: rgb(43, 40, 40);
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  bottom: -1.5rem;
+  justify-content: space-between;
+  height: max-content;
+}
+.icon {
+  color: #fff;
+  cursor: pointer;
+}
+.blueIcon {
+  color: rgb(12, 92, 211);
+}
+.create-playlist {
+  background-color: #fff;
+  box-shadow: 1px 2px 2px 1px rgb(51, 50, 50);
+  width: 20%;
+  position: absolute;
+  right: 50px;
+  top: 115px;
+}
+@media only screen and (max-width: 650px) {
+  .video-player-container {
+    width: 100vw;
+    margin: 1rem 0rem;
+    justify-content: space-evenly;
+  }
+  .video-player {
+    width: 100%;
+    margin: 0;
+  }
+  .util-container {
+    position: relative;
+    top: -1.5rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .video-player-container {
+    width: 100vw;
+    margin: 1rem 0rem;
+    justify-content: space-evenly;
+  }
+  .video-player {
+    width: 100%;
+    margin: 0;
+  }
+  .util-container {
+    position: relative;
+    top: -1.5rem;
+  }
+}

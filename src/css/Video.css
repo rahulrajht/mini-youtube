@@ -1,0 +1,67 @@
+:root {
+  --video-background: #424d50;
+  --video-background-rgb: rgb(51, 51, 51);
+  --text-color: rgb(22, 21, 21);
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.video-card-desktop {
+  max-width: 325px;
+  width: 90%;
+  background-color: var(--video-background);
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.video-thumbnail {
+  object-fit: contain;
+  text-align: left;
+  font-weight: lighter;
+}
+.video-info {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1rem 0.5rem 1rem 1rem;
+  padding-left: 0.5rem;
+  width: 100%;
+}
+.video-text {
+  margin: 0;
+  margin-left: 3px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  width: 98%;
+  height: fit-content;
+  text-align: left;
+  font-weight: bold;
+  align-self: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.date {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  margin-left: 3px;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+.credits {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-left: 3px;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+.option-container {
+  display: flex;
+  position: relative;
+  top: 0rem;
+  right: -18rem;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 25px;
+}

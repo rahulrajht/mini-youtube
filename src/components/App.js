@@ -7,7 +7,7 @@ import Login from "./Login";
 import LikedVideos from "../components/LikedVideos";
 import PrivateRoute from "./PrivateRoute";
 import PlayList from "./PlayList";
-
+import Error from "./Error";
 export default function App() {
   return (
     <div className="App">
@@ -18,6 +18,7 @@ export default function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/playlist" component={PlayList} />
         <PrivateRoute exact path="/liked-videos" component={LikedVideos} />
+        <Route exact path="*" component={Error} />
       </Switch>
     </div>
   );

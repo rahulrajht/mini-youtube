@@ -10,21 +10,13 @@
   display: flex;
   justify-content: space-between;
 }
-.nav-container > .left > Link >li {
-  width: fit-content;
-  border-radius: 15px;
-  list-style: none;
-  background: #6bc7e4;
-  padding: 0.5rem 1rem;
-  color: #131212;
-  cursor: pointer;
-}
 .link{
   width: fit-content;
   border-radius: 15px;
   list-style: none;
   background: #6bc7e4;
-  padding: 0.5rem 1rem;
+  padding: 1rem inherit;
+  margin-left:15px
   color: #131212;
   cursor: pointer;
 }
@@ -36,8 +28,8 @@
     width: 100%;
     padding: 1rem 2rem;
   }
-  .nav-container > .left > li {
+  .link {
     width: fit-content;
-    margin-left: 0.5rem;
+    margin-left: 0.5rem inherit;
   }
 }

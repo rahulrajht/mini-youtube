@@ -11,12 +11,9 @@ export default function Nav() {
       <nav className="nav-container">
         <ul className="left">
           <Link className="link" to={"/java"} onClick={() => setPlaylistId(requests.fetchJava)}>Java </Link> 
-          <Link className="link" to ={'/javascript'} > <li onClick={() => setPlaylistId(requests.fetchjavaScript)}>
-            JavaScript
-          </li>
-          </Link>
-          <li onClick={() => setPlaylistId(requests.fetchNeog)}>Neog</li>
-          <li onClick={() => setPlaylistId(requests.fetchReact)}>React</li>
+          <Link className="link" to ={'/javascript'} onClick={() => setPlaylistId(requests.fetchjavaScript)}>JavaScript </Link>
+          <Link className="link" to ={'/neog'} onClick={() => setPlaylistId(requests.fetchNeog)}>Neog</Link>
+          <Link className="link" to ={'/react'} onClick={() => setPlaylistId(requests.fetchReact)}>React</Link>
         </ul>
       </nav>
     </>

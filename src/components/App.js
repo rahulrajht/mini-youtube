@@ -8,6 +8,7 @@ import LikedVideos from "../components/LikedVideos";
 import PrivateRoute from "./PrivateRoute";
 import PlayList from "./PlayList";
 import Error from "./Error";
+import VideoList from "./VideoList";
 export default function App() {
   return (
     <div className="App">
@@ -17,7 +18,7 @@ export default function App() {
         <Route exact path="/account" component={Account} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/playlist" component={PlayList} />
-        <Route exact path="/javascript" component={PlayList} />
+        <Route exact path="/javascript" component={VideoList} />
         <PrivateRoute exact path="/liked-videos" component={LikedVideos} />
         <Route exact path="*" component={Error} />
       </Switch>

@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
 }
-.nav-container > .left > li {
+.nav-container > .left > li >Link {
   width: fit-content;
   border-radius: 15px;
   list-style: none;

@@ -2,7 +2,7 @@ import React from "react";
 import "../css/nav.css";
 import { useUrl } from "../context/useVideoPlaylistId";
 import requests from "./requests";
-
+import { Link, NavLink } from "react-router-dom";
 export default function Nav() {
   const { setPlaylistId } = useUrl();
 
@@ -10,7 +10,7 @@ export default function Nav() {
     <>
       <nav className="nav-container">
         <ul className="left">
-          <li onClick={() => setPlaylistId(requests.fetchJava)}>Java</li>
+         <Link to ={'/javascript'} > <li onClick={() => setPlaylistId(requests.fetchJava)}>Java</li> </Link>
           <li onClick={() => setPlaylistId(requests.fetchjavaScript)}>
             JavaScript
           </li>

@@ -17,6 +17,7 @@ export default function App() {
         <Route exact path="/account" component={Account} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/playlist" component={PlayList} />
+        <Route exact path="/javascript" component={PlayList} />
         <PrivateRoute exact path="/liked-videos" component={LikedVideos} />
         <Route exact path="*" component={Error} />
       </Switch>

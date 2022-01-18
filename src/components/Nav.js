@@ -10,8 +10,8 @@ export default function Nav() {
     <>
       <nav className="nav-container">
         <ul className="left">
-          <li onClick={() => setPlaylistId(requests.fetchJava)}>Java</li> 
-          <Link to ={'/javascript'} > <li onClick={() => setPlaylistId(requests.fetchjavaScript)}>
+          <Link className="link" to={"/java"} onClick={() => setPlaylistId(requests.fetchJava)}>Java </Link> 
+          <Link className="link" to ={'/javascript'} > <li onClick={() => setPlaylistId(requests.fetchjavaScript)}>
             JavaScript
           </li>
           </Link>

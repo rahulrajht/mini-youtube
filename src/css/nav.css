@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
 }
-.link{
+.nav-container > .left > li{
   width: fit-content;
   border-radius: 15px;
   list-style: none;
@@ -28,7 +28,7 @@
     width: 100%;
     padding: 1rem 2rem;
   }
-  .link {
+  .nav-container > .left > li {
     width: fit-content;
     margin-left: 0.5rem inherit;
   }

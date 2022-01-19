@@ -2,8 +2,10 @@ import "../styles.css";
 import VideoList from "./VideoList";
 import Nav from "./Nav";
 import NavBar from "./NavBar";
-
+import {useLocation } from "react-roter-dom";
 export default function Home() {
+  const location = useLocation()
+  console.log(location)
   return (
     <div className="App">
       <div className="navbar">
@@ -13,7 +15,7 @@ export default function Home() {
         <Nav />
       </div>
       <div className="videolist">
-        <VideoList />
+        <VideoList path={location.pathname}/>
       </div>
     </div>
   );

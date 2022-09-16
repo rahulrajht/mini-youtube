@@ -39,7 +39,7 @@
   align-self: center;
   letter-spacing: 1px;
   text-decoration: none;
-  color: var(--text-color);
+  color: #fff;
 }
 .date {
   font-family: "Roboto", sans-serif;

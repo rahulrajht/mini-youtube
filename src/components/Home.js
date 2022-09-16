@@ -12,7 +12,7 @@ export default function Home() {
         <Nav />
       </div>
       <div className="videolist">
-        <VideoList path={location.pathname}/>
+        <VideoList />
       </div>
     </div>
   );

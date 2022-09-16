@@ -11,7 +11,7 @@
   justify-content: space-between;
   gap: 15px;
 }
-.nav-container > .left > .link {
+.nav-container > .left > li {
 	width: fit-content;
 	border-radius: 15px;
 	list-style: none;

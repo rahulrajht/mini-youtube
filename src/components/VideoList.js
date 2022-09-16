@@ -3,11 +3,14 @@ import React, { useEffect } from "react";
 import Video from "./Video";
 import { useUrl } from "../context/useVideoPlaylistId";
 import { useVideo } from "../context/videoProvider";
+import requests from "../components/requests";
 import "../css/row.css";
 function VideoList() {
   const { playlistId, searchTerm } = useUrl();
   const { dispatchData } = useVideo();
-
+ if (playlistId === undefined) {
+    playlistId = requests.fetchJava;
+  }
   useEffect(() => {
     axios
       .get(playlistId)

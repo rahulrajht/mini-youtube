@@ -6,10 +6,10 @@ import NavBar from "./NavBar";
 import "../css/likedvideo.css";
 import { useVideo } from "../context/videoProvider";
 export default function PlayList() {
-  // const email = JSON.parse(localStorage.getItem("email"));
+  const email = JSON.parse(localStorage.getItem("email"));
   const { savedVideos } = useVideo();
 
-  if (savedVideos.length !== 0)
+  if (email && savedVideos.length !== 0)
     return (
       <div>
         <NavBar />

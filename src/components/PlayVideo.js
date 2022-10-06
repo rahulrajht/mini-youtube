@@ -84,19 +84,24 @@ export default function PlayVideo(props) {
       }
     }
   }
-  async function addPlayList(name) {
-    const data = [];
-    for (var i = 0; i < videoPlaylist.length; i++) {
-      if (videoPlaylist[i].videoId === videoId) {
-        data.push(videoPlaylist[i]);
-        break;
+  async function addPlayList(name) {   
+    const data = savedVideos.filter(vid=> vid.name ===name)
+    const savedList = data[0].list
+    const isAvailable = savedList.find(item =>item.videoId === videoId)
+    if(isAvailable){
+      toast.warning("Already present in playlist")
+    }else{
+      for (var i = 0; i < videoPlaylist.length; i++) {
+        if (videoPlaylist[i].videoId === videoId) {
+          dispatchData({
+            type: "addtoplaylist",
+            data: { name, items: videoPlaylist[i] }
+          });
+          toast.success("Video added to" + name);
+          break;
+        }
       }
-    }
-    dispatchData({
-      type: "addtoplaylist",
-      data: { name, items: data[0] }
-    });
-    toast.success("Video added to " + name);
+    }      
   }
 
   return (

@@ -61,53 +61,42 @@ export default function PlayVideo(props) {
     }
   }
   async function createPlyList() {
-    const playListName = inputRef.current.value;
-    dispatchData({
-      type: "setvideoPlaylist",
-      data: { name: playListName, list: [] }
-    });
-    toast.success("Playlist created " + playListName);
-    // const body = {
-    //   name: playListName,
-    //   email: email
-    // };
-    // const url = "https://Auth-API.rahulgupta99.repl.co/save/new-playlist";
-    // const res = await axios.post(url, body);
-    // if (res.status === 200) {
-    //   toast.success("Playlist created.");
-    // }
-    // const response = await axios.get(
-    //   "https://Auth-API.rahulgupta99.repl.co/save/playlist/" + email
-    // );
-    // setPlayList(response.data);
+    const isLogin = JSON.parse(localStorage.getItem("isUserLogin"));
+    if (!isLogin) {
+      history.push({
+        pathname: "/login",
+        state: { from: history.location.state }
+      });
+    } else {
+      const playListName = inputRef.current.value;
+      if (
+        playListName === "" ||
+        playListName === undefined ||
+        playListName === null
+      ) {
+        toast.warning("Please type the playlist name");
+      } else {
+        dispatchData({
+          type: "setvideoPlaylist",
+          data: { name: playListName, list: [] }
+        });
+        toast.success("Playlist created " + playListName);
+      }
+    }
   }
   async function addPlayList(name) {
     const data = [];
     for (var i = 0; i < videoPlaylist.length; i++) {
       if (videoPlaylist[i].videoId === videoId) {
-        console.log(videoPlaylist[i]);
         data.push(videoPlaylist[i]);
         break;
       }
     }
-    console.log(data);
     dispatchData({
       type: "addtoplaylist",
       data: { name, items: data[0] }
     });
-    toast.success("Video added to" + name);
-    // const body = {
-    //   name: name,
-    //   email: email,
-    //   id: videoId
-    // };
-    // console.log(body);
-    // const res = await axios.post(
-    //   "https://Auth-API.rahulgupta99.repl.co/save/playlist",
-    //   body
-    // );
-    // toast.info("Added");
-    // console.log(res);
+    toast.success("Video added to " + name);
   }
 
   return (
@@ -131,13 +120,12 @@ export default function PlayVideo(props) {
       <div className="create-playlist">
         <input ref={inputRef} type="text" placeholder="Playlist Name" />
         <button onClick={createPlyList}> Create </button>
-        {savedVideos.map((item) => (
+        {email && savedVideos.map((item) => (
           <div>
             <button onClick={() => addPlayList(item.name)}>{item.name}</button>
           </div>
         ))}
       </div>
-      {}
     </div>
   );
 }

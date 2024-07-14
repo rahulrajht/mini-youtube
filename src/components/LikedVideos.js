@@ -11,7 +11,7 @@ export default function LikedVideos() {
 
   useEffect(() => {
     async function getData() {
-      const url = "https://Auth-API.rahulgupta99.repl.co/save/liked";
+      const url = https://auth-api-lac.vercel.app/save/liked";
       if (email) {
         const res = await axios.post(url, { email: email });
         // console.log(res.data[0].isLiked,"from isLiked");

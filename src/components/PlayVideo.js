@@ -39,7 +39,7 @@ export default function PlayVideo(props) {
         state: { from: history.location.state }
       });
     if (type === "like") {
-      const url = "https://Auth-API.rahulgupta99.repl.co/save/liked-videos";
+      const url = "https://auth-api-lac.vercel.app/save/liked-videos";
       const response = await axios.post(url, {
         videoId: videoId,
         email: JSON.parse(localStorage.getItem("email"))
@@ -52,7 +52,7 @@ export default function PlayVideo(props) {
     }
     if (type === "dislike") {
       await axios.post(
-        "https://Auth-API.rahulgupta99.repl.co/save/liked-videos-remove",
+        "https://auth-api-lac.vercel.app/save/liked-videos-remove",
         { email: email, id: videoId }
       );
       toast.dark("Removed from liked", { autoClose: 3000 });

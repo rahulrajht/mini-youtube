@@ -7,12 +7,12 @@ export const AuthProvider = ({ children }) => {
   const [{ user, isUserLogin }, dispatch] = useReducer(reducer, data);
 
   function SignUp(name, email, password) {
-    const url = "https://Auth-API.rahulgupta99.repl.co/api/user/register";
+    const url = "https://auth-api-lac.vercel.app/api/user/register";
     return axios.post(url, { name, email, password });
   }
 
   function Login(email, password) {
-    const url = "https://Auth-API.rahulgupta99.repl.co/api/user/login";
+    const url = "https://auth-api-lac.vercel.app/api/user/login";
     return axios.post(url, { email: email, password: password });
   }
 
